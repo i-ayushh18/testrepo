@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#controls {
+    margin: 20px 0;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 2px;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    background: #222;
+    width: fit-content;
+    border: 4px solid #333;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background 0.2s;
+}
+
+.cell.selected {
+    background: #b3d9ff;
+}
+
+.cell.prefilled {
+    background: #e0e0e0;
+    font-weight: bold;
+    cursor: default;
+}
+
+.cell.invalid {
+    background: #ffcccc;
+}
+
+#number-select {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.number-btn {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.number-btn.selected {
+    background: #b3d9ff;
+}
+
+@media (max-width: 500px) {
+    #sudoku-board {
+        grid-template-columns: repeat(9, 28px);
+        grid-template-rows: repeat(9, 28px);
+    }
+    .cell, .number-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1em;
+        line-height: 28px;
+    }
+}
