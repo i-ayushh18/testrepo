@@ -1,0 +1,4 @@
+import React, { useState, useEffect } from 'react';\n
+const Sudoku = () => {\nconst [grid, setGrid] = useState([\n[5, 3, 0, 0, 7, 0, 0, 0, 0],\n[6, 0, 0, 1, 9, 5, 0, 0, 0],\n[0, 9, 8, 0, 0, 0, 0, 6, 0],\n[8, 0, 0, 0, 6, 0, 0, 0, 3],\n[4, 0, 0, 8, 0, 3, 0, 0, 1],\n[7, 0, 0, 0, 2, 0, 0, 0, 6],\n[0, 6, 0, 0, 0, 0, 2, 8, 0],\n[0, 0, 0, 4, 1, 9, 0, 0, 5],\n[0, 0, 0, 0, 8, 0, 0, 7, 9]\n]);\n\nreturn (\n<div>\n  <h1>Sudoku Game</h1>\n  <table>\n  {grid.map((row, i) => (\n    <tr>\n      {row.map((cell, j) => (\n        <td key={j}>{cell}</td>\n      ))}\n    </tr>\n  ))}\n  </table>\n</div>\n);\n}\
+
+export default Sudoku;
