@@ -1,0 +1,74 @@
+/* 
+  sudoku.css
+  Styles for 9x9 Sudoku grid with clear 3x3 sub-grid separation.
+  - Each cell is square and empty.
+  - 3x3 sub-grids are separated with thicker borders.
+  - Responsive and accessible.
+*/
+
+/* Reset table styles for consistency */
+.sudoku-grid {
+    border-collapse: collapse;
+    margin: 2rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background: #fff;
+}
+
+.sudoku-grid td {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border: 1px solid #888;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.25rem;
+    background: #fafafa;
+    transition: background 0.2s;
+    box-sizing: border-box;
+    /* Prevent selection highlight */
+    user-select: none;
+}
+
+/* Thicker borders for 3x3 sub-grids */
+.sudoku-grid tr:nth-child(3n) td {
+    border-bottom: 3px solid #222;
+}
+.sudoku-grid tr td:nth-child(3n) {
+    border-right: 3px solid #222;
+}
+
+/* Top and left borders for the outer grid */
+.sudoku-grid tr:first-child td {
+    border-top: 3px solid #222;
+}
+.sudoku-grid tr td:first-child {
+    border-left: 3px solid #222;
+}
+
+/* Optional: Responsive scaling for smaller screens */
+@media (max-width: 500px) {
+    .sudoku-grid td {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+        font-size: 1rem;
+    }
+}
+
+/* Visually center the board and add some spacing */
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* Optional: Style for the heading */
+main h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
